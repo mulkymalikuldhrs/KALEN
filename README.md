@@ -45,6 +45,7 @@ The system integrates four key protocols:
 | **WebAuthn** | Passwordless authentication | Implemented, requires HTTPS + compatible browser |
 | **MCP** | Agent tool discovery and invocation | Core server functional |
 | **A2A** | Agent-to-Agent communication | Early draft -- spec may change |
+| **Offline Mesh** | Zero-WiFi/Cellular P2P Multi-Hop Messaging | Implemented (WebRTC + Web Bluetooth BLE + Outbox Sync) |
 
 **Honest Assessment**: Core protocol handlers are implemented and tested (379 tests passing), but full integration testing is ongoing. Many higher-level features are planned but not yet built. The A2A protocol implementation follows a draft specification that may undergo breaking changes.
 
@@ -60,7 +61,8 @@ KALEN envisions:
 - **Trust by Design** -- Passwordless authentication for both entities via WebAuthn, not shared API keys
 - **Tool Sovereignty** -- Agents discover and invoke tools through MCP, not hardcoded integrations
 - **Agent Mesh** -- Agents communicate, delegate, and collaborate with each other through A2A
-- **Protocol Convergence** -- One unified messaging API that normalizes OpenIM, MCP, and A2A into a coherent communication layer
+- **Protocol Convergence** -- One unified messaging API that normalizes OpenIM, MCP, A2A, and Offline Mesh into a coherent communication layer
+- **Zero-Infrastructure Mesh Network** -- Offline messaging between humans and agents over WebRTC DataChannels and Web Bluetooth BLE when WiFi or cellular network is unavailable
 
 This is ambitious. We're not there yet. But the foundation is being laid.
 

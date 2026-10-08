@@ -15,7 +15,7 @@ import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/commo
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { A2aTaskEntity } from '../database/entities/a2a-task.entity';
+import { A2aTaskEntity, A2ATaskStatus } from '../database/entities/a2a-task.entity';
 import {
   A2ARouterService,
   AgentCardService,
@@ -114,7 +114,7 @@ export class A2aService {
 
     // Update database
     await this.taskRepo.update(taskId, {
-      status: 'canceled',
+      status: A2ATaskStatus.CANCELED,
       statusMessage: reason ?? `Cancelled by ${cancelledBy}`,
     });
 

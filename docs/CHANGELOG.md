@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.1-alpha.1] - 2026-06-11
+
+### Added
+
+- **Offline Mesh Network Engine (`@kalen/shared/src/mesh/`)** — Zero-WiFi, Zero-Cellular decentralized peer-to-peer messaging engine. Supports WebRTC P2P DataChannels, Web Bluetooth BLE short-range radio transport, multi-hop gossip flooding, duplicate packet deduplication, and StoreAndForwardQueue outbox persistence.
+- **Offline Autonomous Agent Mesh Handler (`MeshAgentHandler`)** — Client-side / edge autonomous agent execution over offline mesh. Enables local agent execution, tool invocations, and A2A task processing offline.
+- **Backend Server Mesh Gateway Bridge (`apps/server/src/mesh/`)** — `MeshService`, `MeshController`, and `MeshModule` in NestJS server for store-and-forward outbox synchronization when offline mesh nodes reconnect to gateway servers.
+- **Offline PWA Capabilities & Mesh Control Panel (`apps/web`)** — Service Worker (`public/sw.js`) for PWA app caching, `MeshClientManager`, `useMesh` hook, `MeshStatusCard`, `MeshPeerList`, and Mesh Control Panel page (`apps/web/src/app/(main)/mesh/page.tsx`).
+- **Browser Playwright Verification** — Playwright script verifying offline mesh control panel, peer discovery, and offline packet flooding.
+
 ## [0.2.0-alpha.1] - 2026-06-10
 
 > **Note:** This is a significant pre-alpha release. Core library packages now have real implementations

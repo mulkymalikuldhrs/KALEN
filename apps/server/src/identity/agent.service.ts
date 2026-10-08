@@ -14,7 +14,7 @@ import { Injectable, NotFoundException, BadRequestException, ForbiddenException 
 import { ConfigService } from '@nestjs/config';
 import { AgentRepository } from '../database/repositories/agent.repository';
 import { UserRepository } from '../database/repositories/user.repository';
-import { AgentRole, AgentStatus } from '../database/entities';
+import { AgentEntity, AgentRole, AgentStatus } from '../database/entities';
 import { validateAgentName, validatePublicKey, AGENT_DISPLAY_SUFFIX } from '@kalen/shared';
 import { createAgentIdentity, Ed25519Signer, type CreateAgentIdentityResult } from '@kalen/identity';
 import { Permission } from '@kalen/identity';
@@ -184,7 +184,7 @@ export class AgentService {
   /**
    * Update agent.
    */
-  async updateAgent(id: string, updates: { displayName?: string; capabilities?: Record<string, unknown>; status?: 'active' | 'suspended' | 'deactivated' }) {
+  async updateAgent(id: string, updates: { displayName?: string; capabilities?: Record<string, unknown>; status?: 'active' | 'suspended' | 'deactivated' | 'revoked' }) {
     const agent = await this.agentRepo.findById(id);
     if (!agent) {
       throw new NotFoundException({
@@ -206,7 +206,9 @@ export class AgentService {
     const updateParams: any = {};
     if (updates.displayName !== undefined) updateParams.displayName = updates.displayName;
     if (updates.capabilities !== undefined) updateParams.capabilities = updates.capabilities as any;
-    if (updates.status !== undefined) updateParams.status = updates.status as AgentStatus;
+    if (updates.status !== undefined) {
+      updateParams.status = updates.status === 'revoked' ? AgentStatus.DEACTIVATED : (updates.status as AgentStatus);
+    }
 
     const updated = await this.agentRepo.update(id, updateParams);
     if (!updated) {

@@ -10,7 +10,7 @@ const config: Config = {
     "^@kalen/identity$": "<rootDir>/../identity/src/index.ts",
   },
   transformIgnorePatterns: [
-    "node_modules/(?!( @noble|@simplewebauthn)/)",
+    "node_modules/(?!(\\.pnpm|@noble|@simplewebauthn)/)",
   ],
   transform: {
     "^.+\\.[tj]sx?$": [

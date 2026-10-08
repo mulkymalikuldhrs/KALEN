@@ -79,7 +79,7 @@ export class MessageRepository {
       content: params.content,
       metadata: params.metadata ?? null,
       replyToId: params.replyToId ?? null,
-      replyTo: params.replyToId ?? null, // Legacy compat
+      legacyReplyTo: params.replyToId ?? null, // Legacy compat
       senderSuffix: params.senderSuffix ?? null,
       mentions: params.mentions ?? [],
       reactions: {},

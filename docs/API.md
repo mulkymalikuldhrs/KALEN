@@ -14,6 +14,8 @@
 
 ## Table of Contents
 
+- [Offline Mesh Endpoints](#offline-mesh-endpoints)
+
 1. [Overview](#1-overview)
 2. [Authentication](#2-authentication)
 3. [REST Endpoints](#3-rest-endpoints)

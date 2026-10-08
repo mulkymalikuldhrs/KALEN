@@ -96,6 +96,12 @@
 - TypeScript compiles with server's own tsconfig (0 real errors when using `tsc --noEmit` from server directory)
 - Root monorepo tsconfig lacks experimentalDecorators (expected - root excludes apps/)
 
+### Mesh Module
+- `MeshService`, `MeshController`, `MeshModule` registered in `app.module.ts`:
+  - GET /mesh/status - Returns server mesh gateway status and connected active mesh nodes
+  - POST /mesh/sync - Syncs offline store-and-forward mesh packet bundle
+  - GET /mesh/outbox/:nodeId - Returns pending store-and-forward outbox items queued for a reconnecting node
+
 ## Key Design Decisions
 1. **Honest stubs**: Agent Ed25519 signature verification is marked TODO, not faked
 2. **@kalen/* package integration**: All services import and use the existing library packages
