@@ -73,6 +73,17 @@ export function useAgents() {
   };
 }
 
+import { meshClientManager } from "@/lib/mesh-client";
+
+export function useOfflineSendMessage() {
+  const sendOfflineMessage = async (roomId: string, content: string) => {
+    const engine = meshClientManager.getEngine() ?? meshClientManager.initialize("local_user", "Local User");
+    return engine.sendChatMessage(roomId, content, "*");
+  };
+
+  return { sendOfflineMessage };
+}
+
 export function useMCPServers() {
   const { data, error, isLoading, mutate } = useSWR(
     "mcp-servers",

@@ -61,6 +61,8 @@ kalen/
 │   │   │   │   │
 │   │   │   │   ├── (main)/                     # Main app route group (requires auth)
 │   │   │   │   │   ├── layout.tsx              # Sidebar + header + presence indicator
+│   │   │   │   ├── mesh/
+│   │   │   │   │   └── page.tsx            # Offline mesh network control panel
 │   │   │   │   │   ├── chat/
 │   │   │   │   │   │   ├── page.tsx            # Chat list view
 │   │   │   │   │   │   └── [conversationId]/
@@ -312,6 +314,11 @@ kalen/
 │   │   │   │   ├── mcp.schema.ts               # MCP request/response validation
 │   │   │   │   └── a2a.schema.ts               # A2A Task, Message, Artifact validation
 │   │   │   │
+│   │   │   ├── mesh/                           # Offline Mesh Engine & Transports
+│   │   │   │   ├── mesh-engine.ts              # Multi-hop gossip router & beacon manager
+│   │   │   │   ├── store-and-forward.ts        # Outbox queue, deduplication & TTL
+│   │   │   │   ├── mesh-agent-handler.ts       # Offline autonomous agent message handler
+│   │   │   │   └── transports/                 # Transports (WebRTC & Web Bluetooth BLE)
 │   │   │   ├── constants/                      # Shared constants
 │   │   │   │   ├── entity-rules.ts             # AGENT_SUFFIX = "(ai)", naming regex
 │   │   │   │   ├── permissions.ts              # Permission enum: READ, WRITE, CALL, ADMIN

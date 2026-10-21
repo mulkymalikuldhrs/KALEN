@@ -68,18 +68,18 @@ export class AuditInterceptor<T> implements NestInterceptor<T, any> {
         actorId: identity.sub,
         actorType: identity.kind,
         action: `${controller.name}.${handler.name}`,
-        targetType: null,
-        targetId: null,
+        targetType: undefined,
+        targetId: undefined,
         details: {
           method: request.method,
           url: request.url,
           durationMs: Date.now() - startTime,
         },
-        requestId: request.headers?.['x-request-id'] ?? null,
-        ipAddress: request.ip ?? null,
-        userAgent: request.headers?.['user-agent'] ?? null,
+        requestId: request.headers?.['x-request-id'] ?? undefined,
+        ipAddress: request.ip ?? undefined,
+        userAgent: request.headers?.['user-agent'] ?? undefined,
         accessDecision,
-        denialReason,
+        denialReason: denialReason ?? undefined,
       });
     } catch {
       // Audit logging should never fail the request

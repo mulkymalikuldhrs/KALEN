@@ -13,6 +13,7 @@
 
 | Item | Status | Notes |
 |------|--------|-------|
+| Offline Mesh P2P Security | ✅ Implemented | Ed25519 packet signing, TTL limits, deduplication, store-and-forward queue |
 | Ed25519 agent authentication | ✅ Implemented | Real Ed25519 via @noble/ed25519 — sign, verify, fromPrivateKey all functional |
 | A2A agent card signing/verification | ✅ Implemented | Uses @kalen/identity Ed25519Signer — real cryptographic signatures |
 | JWT token issuance and validation | ✅ Implemented | Human and agent tokens with entity type embedding, refresh support |

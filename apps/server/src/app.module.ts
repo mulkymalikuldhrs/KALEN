@@ -15,6 +15,7 @@ import { MessagingModule } from './messaging/messaging.module';
 import { McpModule } from './mcp/mcp.module';
 import { A2aModule } from './a2a/a2a.module';
 import { HealthModule } from './health/health.module';
+import { MeshModule } from './mesh/mesh.module';
 import { EventsGateway } from './gateway/events.gateway';
 import { AuditLogRepository } from './database/repositories/audit-log.repository';
 import { AuditInterceptor } from './common/interceptors/audit.interceptor';
@@ -42,6 +43,7 @@ import { AuditInterceptor } from './common/interceptors/audit.interceptor';
     McpModule,
     A2aModule,
     HealthModule,
+    MeshModule,
   ],
   controllers: [AppController],
   providers: [

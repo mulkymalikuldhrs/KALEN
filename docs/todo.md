@@ -40,6 +40,18 @@
 
 ---
 
+## Phase 1.5: Offline Mesh Network (Zero WiFi/Cellular) — 100% Complete ✅
+
+- [x] Create `@kalen/shared/src/mesh/` protocol types (`MeshPacket`, `MeshRoutingHeader`, `StoreAndForwardMessage`, `MeshPeerInfo`)
+- [x] Implement `StoreAndForwardQueue` with deduplication and TTL handling
+- [x] Implement `WebRTCDataChannelTransport` and `WebBluetoothTransport`
+- [x] Implement `MeshNetworkEngine` with multi-hop gossip flooding and beaconing
+- [x] Implement `MeshAgentHandler` for offline autonomous agent execution over mesh
+- [x] Create NestJS server mesh bridge (`MeshService`, `MeshController`, `MeshModule`)
+- [x] Create Next.js Mesh Control Panel (`apps/web/src/app/(main)/mesh/page.tsx`)
+- [x] Create Service Worker (`public/sw.js`) for offline PWA functionality
+- [x] Browser Playwright verification for offline mesh UI
+
 ## Phase 1: Identity Service (MVP Foundation) — ~60% Complete
 
 - [x] Replace hash-based signing with real Ed25519 (`@noble/ed25519`)

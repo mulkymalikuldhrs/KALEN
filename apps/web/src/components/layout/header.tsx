@@ -6,7 +6,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, Bell, Moon, Sun } from "lucide-react";
+import { Search, Bell, Moon, Radio } from "lucide-react";
+import Link from "next/link";
 import { useAuth } from "@/hooks/use-auth";
 
 export function Header() {
@@ -34,6 +35,15 @@ export function Header() {
 
       {/* Right side actions */}
       <div className="flex items-center gap-2 ml-4">
+        {/* Offline Mesh Status Button */}
+        <Link
+          href="/mesh"
+          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-xs font-medium border border-emerald-500/20 transition-colors"
+        >
+          <Radio size={14} className="animate-pulse" />
+          <span>Mesh Active</span>
+        </Link>
+
         {/* Notifications */}
         <button
           className="relative p-2 rounded-lg hover:bg-kalen-surface-2 text-kalen-text-secondary hover:text-kalen-text transition-colors"

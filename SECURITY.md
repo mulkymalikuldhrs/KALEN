@@ -12,4 +12,7 @@ We take security seriously. If you discover a vulnerability, please report it re
 ### Response Time
 We aim to acknowledge reports within 48 hours and provide a fix within 7 days for critical issues.
 
+### Offline Mesh Security
+Offline mesh messages are signed using Ed25519 keys, deduplicated via packet content hashing, and bounded by cryptographic hop limits and TTLs.
+
 Thank you for helping keep this project secure!

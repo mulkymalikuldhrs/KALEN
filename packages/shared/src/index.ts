@@ -52,6 +52,29 @@ export type {
 } from "./types/messaging";
 
 export type {
+  MeshTransportType,
+  MeshHopHistory,
+  MeshRoutingHeader,
+  MeshPayloadType,
+  MeshChatMessagePayload,
+  MeshPeerBeaconPayload,
+  MeshGossipDigestPayload,
+  MeshA2ATaskPayload,
+  MeshAckPayload,
+  MeshPayloadData,
+  MeshPacket,
+  MeshPeerInfo,
+  StoreAndForwardMessage,
+  MeshNetworkStatus,
+} from "./types/mesh";
+
+export { StoreAndForwardQueue } from "./mesh/store-and-forward";
+export { WebRTCDataChannelTransport } from "./mesh/transports/webrtc-transport";
+export { WebBluetoothTransport } from "./mesh/transports/bluetooth-transport";
+export { MeshNetworkEngine } from "./mesh/mesh-engine";
+export { MeshAgentHandler } from "./mesh/mesh-agent-handler";
+
+export type {
   BaseEvent,
   IdentityEvent,
   MessageEvent,

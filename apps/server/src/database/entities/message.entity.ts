@@ -15,7 +15,6 @@ import {
   Index,
 } from 'typeorm';
 import { RoomEntity } from './room.entity';
-import { MessageEntity } from './message.entity';
 
 /** Content types for messages */
 export enum ContentType {
@@ -82,7 +81,7 @@ export class MessageEntity {
 
   /** Legacy: replyTo column kept for backward compat */
   @Column({ name: 'reply_to', type: 'uuid', nullable: true })
-  replyTo: string | null;
+  legacyReplyTo: string | null;
 
   /** Mentioned entity suffixes */
   @Column({ type: 'simple-array', nullable: true })
